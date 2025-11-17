@@ -1,0 +1,689 @@
+/* Контейнер событий */
+.events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.events-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.events-header h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.events-header p {
+    color: #b0b0b0;
+    font-size: 1.2rem;
+}
+
+/* Секции событий */
+.event-section {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+}
+
+.event-header h2 {
+    color: #e74c3c;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.event-badge {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Контент событий */
+.event-content {
+    display: grid;
+    gap: 40px;
+}
+
+/* Таблицы (добавляем стили из первого сайта) */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2d2d2d;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.info-table th {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.info-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #444;
+    color: #b0b0b0;
+}
+
+.info-table tbody tr:hover {
+    background: #333;
+}
+
+/* Чередующиеся события */
+.alternating-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+}
+
+.alternating-header h2 {
+    color: #e74c3c;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.schedule-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #3498db;
+}
+
+.schedule-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.schedule-dot.live {
+    background: #e74c3c;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.alternating-events {
+    display: grid;
+    gap: 30px;
+}
+
+.alternating-event {
+    background: #2d2d2d;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.event-cycle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.cycle-indicator {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.cycle-indicator.active {
+    background: #27ae60;
+    color: white;
+}
+
+.cycle-indicator.upcoming {
+    background: #f39c12;
+    color: white;
+}
+
+.event-cycle h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.event-timer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+.timer-icon {
+    font-size: 1.1rem;
+}
+
+.time-remaining {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Детали событий */
+.event-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.event-mechanics h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.event-mechanics p {
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Требования команды */
+.team-requirements h5 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.requirement:hover {
+    transform: translateY(-3px);
+    border-color: #e74c3c;
+}
+
+.req-icon {
+    font-size: 1.5rem;
+}
+
+.requirement div {
+    display: flex;
+    flex-direction: column;
+}
+
+.requirement strong {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.requirement span {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+}
+
+/* Уровни подземелья */
+.dungeon-levels {
+    margin: 25px 0;
+}
+
+.dungeon-levels h5 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Оборона базы */
+.defense-setup h5 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.defense-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.defense-card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.defense-card:hover {
+    transform: translateY(-5px);
+    border-color: #e74c3c;
+}
+
+.defense-card h6 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.defense-card p {
+    color: #b0b0b0;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.defense-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.defense-card li {
+    color: #b0b0b0;
+    padding: 3px 0;
+    font-size: 0.8rem;
+    position: relative;
+    padding-left: 12px;
+}
+
+.defense-card li:before {
+    content: "•";
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+}
+
+/* Волны обороны */
+.wave-progression h5 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.wave-timeline {
+    display: grid;
+    gap: 10px;
+}
+
+.wave {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.wave:hover {
+    transform: translateX(5px);
+    border-color: #e74c3c;
+}
+
+.wave-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.wave-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.wave-info strong {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.wave-info span {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+}
+
+/* Стратегия */
+.event-strategy h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.strategy-tips {
+    display: grid;
+    gap: 15px;
+}
+
+.strategy-tip {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.strategy-tip:hover {
+    transform: translateY(-3px);
+    border-color: #e74c3c;
+}
+
+.strategy-tip h5 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.strategy-tip p {
+    color: #b0b0b0;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Турнир */
+.tournament-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.tournament-structure h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.tournament-structure p {
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.team-composition h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.teams-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.team-slot {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.team-slot:hover {
+    transform: translateY(-3px);
+    border-color: #e74c3c;
+}
+
+.team-slot h5 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.team-requirements {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.team-requirements span {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+/* Брекет система */
+.tournament-brackets h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.bracket-system {
+    display: grid;
+    gap: 15px;
+}
+
+.bracket-phase {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.bracket-phase:hover {
+    transform: translateX(5px);
+    border-color: #e74c3c;
+}
+
+.phase-title {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.phase-details p {
+    color: #b0b0b0;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.phase-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.phase-details li {
+    color: #b0b0b0;
+    padding: 3px 0;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.phase-details li:before {
+    content: "•";
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+}
+
+/* Награды турнира */
+.tournament-rewards h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.rewards-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tier-reward {
+    background: #2d2d2d;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tier-reward:hover {
+    transform: scale(1.05);
+}
+
+.tier-reward h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.reward-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reward-items span {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+/* Советы турнира */
+.tournament-tips h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.tournament-strategy {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.strategy-column {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.strategy-column:hover {
+    transform: translateY(-5px);
+    border-color: #e74c3c;
+}
+
+.strategy-column h5 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.strategy-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.strategy-column li {
+    color: #b0b0b0;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 15px;
+}
+
+.strategy-column li:before {
+    content: "✓";
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .tournament-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-cycle {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .event-cycle h3 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .requirements-grid,
+    .defense-grid,
+    .rewards-tiers,
+    .tournament-strategy {
+        grid-template-columns: 1fr;
+    }
+    
+    .alternating-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .event-section {
+        padding: 25px 20px;
+    }
+    
+    .alternating-event {
+        padding: 20px;
+    }
+}

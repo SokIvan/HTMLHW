@@ -1,0 +1,323 @@
+/* Космический фон для страницы */
+body.dark-theme {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: 
+        radial-gradient(ellipse at center, #0a0a2a 0%, #000000 100%);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Звезды через псевдоэлементы */
+.stars, .stars2, .stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stars::before, .stars2::before, .stars3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(4px 4px at 50px 100px, #ffffff, transparent),
+        radial-gradient(3px 3px at 150px 200px, #ffffff, transparent),
+        radial-gradient(2px 2px at 250px 300px, #ffffff, transparent),
+        radial-gradient(4px 4px at 350px 400px, #ffffff, transparent),
+        radial-gradient(3px 3px at 450px 100px, #ffffff, transparent),
+        radial-gradient(2px 2px at 550px 200px, #ffffff, transparent),
+        radial-gradient(4px 4px at 650px 300px, #ffffff, transparent),
+        radial-gradient(3px 3px at 750px 400px, #ffffff, transparent),
+        radial-gradient(2px 2px at 850px 100px, #ffffff, transparent),
+        radial-gradient(4px 4px at 50px 500px, #ffffff, transparent),
+        radial-gradient(3px 3px at 150px 600px, #ffffff, transparent),
+        radial-gradient(2px 2px at 250px 700px, #ffffff, transparent),
+        radial-gradient(4px 4px at 350px 800px, #ffffff, transparent),
+        radial-gradient(3px 3px at 450px 500px, #ffffff, transparent),
+        radial-gradient(2px 2px at 550px 600px, #ffffff, transparent),
+        radial-gradient(4px 4px at 650px 700px, #ffffff, transparent),
+        radial-gradient(3px 3px at 750px 800px, #ffffff, transparent),
+        radial-gradient(2px 2px at 850px 500px, #ffffff, transparent);
+    background-repeat: no-repeat;
+    animation: twinkle 4s infinite ease-in-out;
+}
+
+.stars2::before {
+    background-image: 
+        radial-gradient(3px 3px at 100px 150px, #ffffff, transparent),
+        radial-gradient(2px 2px at 200px 250px, #ffffff, transparent),
+        radial-gradient(4px 4px at 300px 350px, #ffffff, transparent),
+        radial-gradient(3px 3px at 400px 450px, #ffffff, transparent),
+        radial-gradient(2px 2px at 500px 150px, #ffffff, transparent),
+        radial-gradient(4px 4px at 600px 250px, #ffffff, transparent),
+        radial-gradient(3px 3px at 700px 350px, #ffffff, transparent),
+        radial-gradient(2px 2px at 800px 450px, #ffffff, transparent),
+        radial-gradient(4px 4px at 100px 550px, #ffffff, transparent),
+        radial-gradient(3px 3px at 200px 650px, #ffffff, transparent),
+        radial-gradient(2px 2px at 300px 750px, #ffffff, transparent),
+        radial-gradient(4px 4px at 400px 850px, #ffffff, transparent),
+        radial-gradient(3px 3px at 500px 550px, #ffffff, transparent),
+        radial-gradient(2px 2px at 600px 650px, #ffffff, transparent),
+        radial-gradient(4px 4px at 700px 750px, #ffffff, transparent),
+        radial-gradient(3px 3px at 800px 850px, #ffffff, transparent);
+    animation: twinkle 6s infinite ease-in-out;
+    animation-delay: 2s;
+}
+
+.stars3::before {
+    background-image: 
+        radial-gradient(2px 2px at 75px 125px, #ffffff, transparent),
+        radial-gradient(4px 4px at 175px 225px, #ffffff, transparent),
+        radial-gradient(3px 3px at 275px 325px, #ffffff, transparent),
+        radial-gradient(2px 2px at 375px 425px, #ffffff, transparent),
+        radial-gradient(4px 4px at 475px 125px, #ffffff, transparent),
+        radial-gradient(3px 3px at 575px 225px, #ffffff, transparent),
+        radial-gradient(2px 2px at 675px 325px, #ffffff, transparent),
+        radial-gradient(4px 4px at 775px 425px, #ffffff, transparent),
+        radial-gradient(3px 3px at 75px 525px, #ffffff, transparent),
+        radial-gradient(2px 2px at 175px 625px, #ffffff, transparent),
+        radial-gradient(4px 4px at 275px 725px, #ffffff, transparent),
+        radial-gradient(3px 3px at 375px 825px, #ffffff, transparent),
+        radial-gradient(2px 2px at 475px 525px, #ffffff, transparent),
+        radial-gradient(4px 4px at 575px 625px, #ffffff, transparent),
+        radial-gradient(3px 3px at 675px 725px, #ffffff, transparent),
+        radial-gradient(2px 2px at 775px 825px, #ffffff, transparent);
+    animation: twinkle 8s infinite ease-in-out;
+    animation-delay: 4s;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Движение звезд */
+.stars {
+    animation: starMove 50s linear infinite;
+}
+
+.stars2 {
+    animation: starMove 80s linear infinite reverse;
+}
+
+.stars3 {
+    animation: starMove 100s linear infinite;
+}
+
+@keyframes starMove {
+    from { transform: translateX(0) translateY(0); }
+    to { transform: translateX(-100px) translateY(50px); }
+}
+
+/* Туманности через псевдоэлементы */
+body.dark-theme::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(74, 0, 102, 0.4), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.3), transparent 40%),
+        radial-gradient(circle at 40% 60%, rgba(0, 204, 136, 0.2), transparent 40%);
+    animation: nebulaFloat 30s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes nebulaFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+    50% { transform: translate(20px, -10px) scale(1.1); opacity: 0.6; }
+}
+
+/* Планета */
+.planet {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: 
+        radial-gradient(circle at 30% 30%, #8B4513, #4B0082 30%, #000 70%),
+        radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.2), transparent 20%);
+    top: 15%;
+    right: 10%;
+    box-shadow: 
+        inset -20px -20px 40px rgba(0, 0, 0, 0.8),
+        inset 10px 10px 40px rgba(139, 69, 19, 0.4),
+        0 0 100px rgba(75, 0, 130, 0.5);
+    animation: rotatePlanet 60s infinite linear;
+    z-index: -1;
+}
+
+@keyframes rotatePlanet {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Млечный путь */
+.milky-way {
+    position: fixed;
+    top: 50%;
+    left: -50%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.2) 80%,
+        transparent
+    );
+    transform: rotate(-15deg);
+    filter: blur(2px);
+    z-index: -1;
+    animation: milkyWayMove 120s linear infinite;
+}
+
+@keyframes milkyWayMove {
+    from { transform: rotate(-15deg) translateX(0); }
+    to { transform: rotate(-15deg) translateX(-100px); }
+}
+
+/* Контейнер фрейма героя */
+.hero-frame-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Навигационные стрелки */
+.navigation-arrows {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+}
+
+.nav-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(231, 76, 60, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.nav-arrow:hover {
+    transform: scale(1.2);
+    background: rgba(231, 76, 60, 0.2);
+    border-color: #e74c3c;
+    box-shadow: 
+        0 0 30px rgba(231, 76, 60, 0.4),
+        0 0 60px rgba(231, 76, 60, 0.2);
+}
+
+.nav-arrow img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* Контейнер для iframe */
+.iframe-wrapper {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    background: rgba(26, 26, 26, 0.85);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 0 100px rgba(231, 76, 60, 0.4),
+        0 0 200px rgba(231, 76, 60, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .navigation-arrows {
+        gap: 20px;
+    }
+    
+    .iframe-wrapper {
+        width: 95%;
+        height: 450px;
+    }
+    
+    .nav-arrow {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .planet {
+        width: 150px;
+        height: 150px;
+        right: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation-arrows {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-arrow {
+        order: 2;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .left-arrow {
+        order: 1;
+    }
+    
+    .right-arrow {
+        order: 3;
+    }
+    
+    .iframe-wrapper {
+        height: 400px;
+        order: 2;
+    }
+    
+    .planet {
+        display: none;
+    }
+    
+    .milky-way {
+        display: none;
+    }
+}

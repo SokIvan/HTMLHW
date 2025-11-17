@@ -1,0 +1,565 @@
+/* Контейнер событий */
+.events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.events-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.events-header h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.events-header p {
+    color: #b0b0b0;
+    font-size: 1.2rem;
+}
+
+/* Секции событий */
+.event-section {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+}
+
+.event-header h2 {
+    color: #e74c3c;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.event-badge {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Контент событий */
+.event-content {
+    display: grid;
+    gap: 40px;
+}
+
+/* Механики событий */
+.mechanics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.mechanic-card {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.mechanic-card:hover {
+    transform: translateY(-5px);
+    border-color: #e74c3c;
+}
+
+.mechanic-card h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.mechanic-card p {
+    color: #b0b0b0;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.mechanic-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mechanic-card li {
+    color: #b0b0b0;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.mechanic-card li:before {
+    content: "•";
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+}
+
+/* Таблицы */
+.scoring-table, .narsia-scoring {
+    margin: 30px 0;
+}
+
+.scoring-table h4, .narsia-scoring h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2d2d2d;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.info-table th {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.info-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #444;
+    color: #b0b0b0;
+}
+
+.info-table tbody tr:hover {
+    background: #333;
+}
+
+/* Награды */
+.event-rewards h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.reward-card {
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.reward-card:hover {
+    transform: scale(1.05);
+}
+
+.reward-card.gold {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #8B7500;
+}
+
+.reward-card.silver {
+    background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+    color: #696969;
+}
+
+.reward-card.bronze {
+    background: linear-gradient(135deg, #cd7f32, #e89d5e);
+    color: #8B4513;
+}
+
+.reward-card h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.reward-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reward-card li {
+    padding: 8px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.reward-card li:last-child {
+    border-bottom: none;
+}
+
+/* Таймлайн битвы факелов */
+.phase-timeline {
+    display: grid;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.phase {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.phase-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.phase-content {
+    flex: 1;
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.phase-content h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.phase-content p {
+    color: #b0b0b0;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.phase-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.phase-content li {
+    color: #b0b0b0;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+.phase-content li:before {
+    content: "•";
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+}
+
+/* Советы по стратегии */
+.strategy-tips h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tip-card {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    border-color: #e74c3c;
+}
+
+.tip-card h5 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.tip-card p {
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* Карта Нарсии */
+.narsia-map-container {
+    margin: 40px 0;
+}
+
+.narsia-map-container h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.narsia-map-container p {
+    color: #b0b0b0;
+    margin-bottom: 25px;
+}
+
+.map-wrapper {
+    position: relative;
+    background: #2d2d2d;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.narsia-map {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Оверлей точек карты */
+.map-overlay {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    pointer-events: none;
+}
+
+.map-point {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+.point-label {
+    width: 30px;
+    height: 30px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.base-point { border: 3px solid #27ae60; }
+.friendly-point { border: 3px solid #3498db; }
+.enemy-point { border: 3px solid #e74c3c; }
+.imperial-point { border: 3px solid #f39c12; }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Легенда карты */
+.map-legend {
+    margin-top: 30px;
+}
+
+.legend-item {
+    background: #2d2d2d;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.legend-item:hover {
+    transform: translateX(10px);
+    border-color: #e74c3c;
+}
+
+.legend-item h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.legend-item p {
+    color: #b0b0b0;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.legend-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.legend-item li {
+    color: #b0b0b0;
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.legend-item li:before {
+    content: "✓";
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Особенности Нарсии */
+.narsia-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.feature {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.feature h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.feature p {
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .events-container {
+        padding: 20px 15px;
+    }
+    
+    .event-section {
+        padding: 25px 20px;
+    }
+    
+    .event-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .mechanics-grid,
+    .rewards-grid,
+    .tips-grid,
+    .narsia-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .phase {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .phase-number {
+        align-self: center;
+    }
+    
+    .map-wrapper {
+        padding: 15px;
+    }
+    
+    .map-overlay {
+        display: none;
+    }
+}
+
+/* Отступы для якорных ссылок карты */
+.map-legend {
+    margin-top: 30px;
+    scroll-margin-top: 100px; /* Отступ при скролле к якорю */
+}
+
+.legend-item {
+    background: #2d2d2d;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+    /* Добавляем отступ для якорных ссылок */
+    scroll-margin-top: 80px;
+}
+
+/* Специальные стили для якорных элементов */
+.legend-item:target {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.3);
+    animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+    0% { background: #2d2d2d; }
+    50% { background: #332222; }
+    100% { background: #2d2d2d; }
+}
+
+/* Плавный скролл к якорям */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Дополнительный отступ для всех якорных элементов */
+.legend-item::before {
+    content: '';
+    display: block;
+    height: 80px; /* Высота навигационной панели + отступ */
+    margin-top: -80px;
+    visibility: hidden;
+}
+
+/* Альтернативное решение - фиксированные отступы для конкретных якорей */
+#base::before,
+#friendly-town::before, 
+#enemy-town::before,
+#imperial-castle::before {
+    content: '';
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+}

@@ -1,0 +1,309 @@
+/* Сброс стилей для мини-сайта */
+body.hero-frame {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+/* Фон героя */
+.frame-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+/* Основной контент героя */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    padding: 20px; /* Уменьшил общий padding */
+}
+
+/* Левая часть - изображение героя */
+.hero-image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px; /* Уменьшил отступ справа */
+}
+
+.hero-image {
+    width: 600px;
+    height: 400px;
+    object-fit: contain;
+    border-radius: 5px;
+    /* Плавная анимация дыхания */
+    animation: breathing 3s ease-in-out infinite;
+    /* Тень для объема */
+    filter: drop-shadow(0 0 20px rgba(231, 76, 60, 0.3));
+}
+
+/* Анимация "дыхания" героя */
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 20px rgba(231, 76, 60, 0.3));
+    }
+    50% {
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 25px rgba(231, 76, 60, 0.5));
+    }
+}
+
+/* Альтернативная анимация - легкое покачивание */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+/* Альтернативная анимация - пульсация */
+@keyframes pulsating {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+}
+
+/* Варианты анимаций для разных героев */
+.hero-image.breathing {
+    animation: breathing 3s ease-in-out infinite;
+}
+
+.hero-image.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+.hero-image.pulsating {
+    animation: pulsating 2.5s ease-in-out infinite;
+}
+
+/* Правая часть - слоты (подвинута левее) */
+.hero-slots-section {
+    flex: 0.8; /* Уменьшил ширину блока со слотами */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -30px; /* Сдвигаем блок левее */
+}
+
+.hero-name {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 30px; /* Уменьшил отступ */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    /* Легкая анимация для текста */
+    animation: textGlow 4s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    50% {
+        text-shadow: 2px 2px 8px rgba(231, 76, 60, 0.6);
+    }
+}
+
+/* Слоты для иконок */
+.hero-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Уменьшил расстояние между рядами */
+    width: 100%;
+    max-width: 300px; /* Ограничил максимальную ширину */
+}
+
+.slot-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Уменьшил расстояние между слотами */
+}
+
+.slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Уменьшил расстояние между номером и иконкой */
+    position: relative;
+}
+
+.slot-number {
+    width: 30px; /* Уменьшил размер номера */
+    height: 30px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    /* Анимация для номеров */
+    animation: numberPulse 2s ease-in-out infinite;
+}
+
+@keyframes numberPulse {
+    0%, 100% {
+        transform: scale(1);
+        background: #e74c3c;
+    }
+    50% {
+        transform: scale(1.1);
+        background: #c0392b;
+    }
+}
+
+.slot-icon {
+    width: 70px; /* Уменьшил размер иконок */
+    height: 70px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.slot-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Всплывающие подсказки для слотов */
+.slot-tooltip {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* ЦВЕТ ФОНА - меняй здесь */
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 10px;
+    color: #ffffff; /* ЦВЕТ ТЕКСТА - меняй здесь */
+    font-size: 0.85rem;
+    width: 160px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+}
+
+/* Стрелочка посередине */
+.slot-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #000000 transparent transparent transparent; /* ЦВЕТ СТРЕЛОЧКИ - меняй здесь */
+}
+
+.slot-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent; /* ЦВЕТ СТРЕЛОЧКИ ВНУТРЕННЕЙ - меняй здесь */
+}
+
+/* Показываем подсказку при наведении на иконку */
+.slot-icon:hover + .slot-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Специфичные подсказки для каждого слота */
+.slot:nth-child(1) .slot-tooltip {
+    background: linear-gradient(135deg, #ac4040, #4338bd); /* ЦВЕТ для слота 1 */
+    color: #ffffff;
+}
+
+.slot:nth-child(2) .slot-tooltip {
+    background: linear-gradient(135deg, #410000, #003452); /* ЦВЕТ для слота 2 */
+    color: #ffffff;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .hero-image-section {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    
+    .hero-slots-section {
+        flex: 1;
+        margin-left: 0;
+    }
+    
+    .hero-image {
+        width: 400px;
+        height: 250px;
+    }
+    
+    .slot-tooltip {
+        width: 140px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Для очень узких экранов */
+@media (max-width: 480px) {
+    .hero-slots {
+        max-width: 250px;
+    }
+    
+    .slot-row {
+        gap: 15px;
+    }
+    
+    .slot-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .slot-tooltip {
+        width: 130px;
+    }
+}
